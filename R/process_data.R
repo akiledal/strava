@@ -12,7 +12,7 @@ process_data <- function(path, old_gpx_format = FALSE) {
   # Function for processing a Strava gpx file
   process_gpx <- function(file) {
     # Parse GPX file and generate R structure representing XML tree
-    pfile <- xml2::read_html(file = file)
+    pfile <- xml2::read_html(x = file)
 
     coords <- XML::xpathSApply(pfile, path = "//trkpt", XML::xmlAttrs)
     # extract the activity type from file name
